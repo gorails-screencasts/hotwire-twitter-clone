@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tweeter</h1>
+
+<%= turbo_stream_from "tweets" %>
+
+<%= turbo_frame_tag "tweet_form" do %>
+  <%= render "tweets/form", tweet: @tweet %>
+<% end %>
+
+<%= turbo_frame_tag "tweets" do %>
+  <%= render @tweets %>
+<% end %>

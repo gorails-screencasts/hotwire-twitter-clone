@@ -1,0 +1,12 @@
+<%= turbo_frame_tag dom_id(tweet) do %>
+  <div class="card card-body">
+    <div><%= tweet.body %></div>
+
+    <div class="mt-2">
+      <%= button_to "Likes (#{tweet.likes_count})", tweet_like_path(tweet), method: :post %>
+      <%= button_to "Retweets (#{tweet.retweets_count})", tweet_retweet_path(tweet), method: :post %>
+
+      <%= link_to "Edit", edit_tweet_path(tweet) %>
+    </div>
+  </div>
+<% end %>
